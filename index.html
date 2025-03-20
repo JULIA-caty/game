@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play free online games at Small Fun Game - The best collection of fun games for everyone!">
+    <meta name="keywords" content="online games, free games, fun games, browser games, puzzle games, action games">
+    <link rel="canonical" href="https://smallfungame.org">
+    <title>Small Fun Game - Free Online Games Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #00c6ff 0%, #7d2ae8 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .game-preview {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;  /* 禁用iframe交互 */
+            transform: scale(0.7);  /* 缩小游戏视图以适应预览 */
+            transform-origin: center center;
+        }
+
+        .preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-title {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .game-description {
+            color: #666;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .play-button {
+            background: linear-gradient(45deg, #FF4B2B, #FF416C);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            display: block;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: scale(1.03);
+        }
+
+        footer {
+            background: linear-gradient(to right, #232526, #414345);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎮 Small Fun Game</h1>
+        <p>Choose your favorite game and start playing!</p>
+    </header>
+
+    <div class="container">
+        <div class="games-grid">
+            <a href="play.html?game=train-miner" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/train-miner" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🚂 Train Miner</h2>
+                <p class="game-description">Mine resources and upgrade your train in this exciting adventure!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=western-sniper" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/western-sniper" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🎯 Western Sniper</h2>
+                <p class="game-description">Test your aim in this wild west shooting game!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=color-fill-3d" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/color-fill-3d" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🎨 Color Fill 3D</h2>
+                <p class="game-description">Fill the shapes with colors in this relaxing puzzle game!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=fruit-party" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/fruit-party" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🍎 Fruit Party</h2>
+                <p class="game-description">Match fruits and create awesome combinations!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=parking-panic" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/parking-panic" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🚗 Parking Panic</h2>
+                <p class="game-description">Master the art of parking in this challenging puzzle game!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=love-tester" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/love-tester" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">❤️ Love Tester</h2>
+                <p class="game-description">Test your compatibility and find your perfect match!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=words-of-wonders" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/words-of-wonders" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">📚 Words of Wonders</h2>
+                <p class="game-description">Discover hidden words and solve challenging puzzles!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=frankenstein-go" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/frankenstein-go" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🧟 Frankenstein Go</h2>
+                <p class="game-description">Guide Frankenstein through exciting adventures!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=slice-rush" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/slice-rush" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🔪 Slice Rush</h2>
+                <p class="game-description">Slice and dice your way through exciting challenges!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+
+            <a href="play.html?game=blocks-puzzle-zoo" class="game-card">
+                <div class="game-preview">
+                    <iframe src="https://play.famobi.com/blocks-puzzle-zoo" frameborder="0"></iframe>
+                    <div class="preview-overlay"></div>
+                </div>
+                <h2 class="game-title">🦁 Blocks Puzzle Zoo</h2>
+                <p class="game-description">Solve puzzles and build your own amazing zoo!</p>
+                <div class="play-button">PLAY NOW</div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Small Fun Game | <a href="https://smallfungame.org" style="color: white;">smallfungame.org</a></p>
+    </footer>
+</body>
+</html> 

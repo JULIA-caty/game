@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play your favorite online games at Small Fun Game - Free browser games for everyone!">
+    <meta name="keywords" content="online games, free games, browser games, fun games">
+    <link rel="canonical" href="https://smallfungame.org/play.html">
+    <title>Playing Game - Small Fun Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #00c6ff 0%, #7d2ae8 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-button {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-3px);
+        }
+
+        .game-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 80vh;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .game-frame:hover {
+            transform: scale(1.003);
+        }
+
+        .game-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .controls {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        #game-title {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">← Back to Games</a>
+        <h1 id="game-title">Loading Game...</h1>
+        <div style="width: 100px;"></div>
+    </header>
+
+    <div class="game-container">
+        <div class="game-frame">
+            <iframe id="game-iframe" 
+                    allow="fullscreen; autoplay; clipboard-write" 
+                    allowfullscreen="true"
+                    webkitallowfullscreen="true" 
+                    mozallowfullscreen="true"
+                    sandbox="allow-forms allow-scripts allow-same-origin allow-popups">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Add error handling
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const game = urlParams.get('game');
+            
+            const games = {
+                'train-miner': {
+                    title: '🚂 Train Miner',
+                    url: 'https://play.famobi.com/train-miner'
+                },
+                'western-sniper': {
+                    title: '🎯 Western Sniper',
+                    url: 'https://play.famobi.com/western-sniper'
+                },
+                'color-fill-3d': {
+                    title: '🎨 Color Fill 3D',
+                    url: 'https://play.famobi.com/color-fill-3d'
+                },
+                'fruit-party': {
+                    title: '🍎 Fruit Party',
+                    url: 'https://play.famobi.com/fruit-party'
+                },
+                'parking-panic': {
+                    title: '🚗 Parking Panic',
+                    url: 'https://play.famobi.com/parking-panic'
+                },
+                'love-tester': {
+                    title: '❤️ Love Tester',
+                    url: 'https://play.famobi.com/love-tester'
+                },
+                'words-of-wonders': {
+                    title: '📚 Words of Wonders',
+                    url: 'https://play.famobi.com/words-of-wonders'
+                },
+                'frankenstein-go': {
+                    title: '🧟 Frankenstein Go',
+                    url: 'https://play.famobi.com/frankenstein-go'
+                },
+                'slice-rush': {
+                    title: '🔪 Slice Rush',
+                    url: 'https://play.famobi.com/slice-rush'
+                },
+                'blocks-puzzle-zoo': {
+                    title: '🦁 Blocks Puzzle Zoo',
+                    url: 'https://play.famobi.com/blocks-puzzle-zoo'
+                }
+            };
+
+            if (game && games[game]) {
+                document.getElementById('game-title').textContent = games[game].title;
+                const iframe = document.getElementById('game-iframe');
+                iframe.src = games[game].url;
+                document.title = games[game].title + ' - Small Fun Game';
+                
+                // Add load event listener
+                iframe.onload = function() {
+                    console.log('Game loaded successfully');
+                };
+                
+                // Add error handling
+                iframe.onerror = function() {
+                    console.error('Failed to load game');
+                    alert('Sorry, failed to load the game. Please try again.');
+                };
+            } else {
+                window.location.href = 'index.html';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html> 
